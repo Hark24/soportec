@@ -1,0 +1,72 @@
+#leftMenu {
+    .accordion-group {
+        margin-bottom: 0px;
+        border:0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+
+        .accordion-heading {
+            height: 35px;
+            border-top: 1px solid #516B8E; /* inner stroke */
+            border-bottom: 1px solid #122845; /* inner stroke */
+            background-color: #475578;
+            list-style-type:none;
+            font-size: 15px;
+
+            a {
+                color: #fff; /* text color */
+                text-shadow: 0 1px 0 #3b3b3b; /* drop shadow */
+                text-decoration:none;
+                font-weight: lighter;
+            }
+
+            .active {
+                width: 182px;
+                height: 40px;
+                border-top: 1px solid #516B8E; /* inner stroke */
+                border-bottom: 1px solid #122845;
+                background-color: #475578;
+            }
+        }
+
+        .accordion-heading.last {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .accordion-heading.first {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .accordion-body {
+            background-color: #d7d7d7; 
+            .accordion-inner {
+                margin: 0;
+                padding: 0;
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    li {
+                        border-right: 1px solid rgba(187, 187, 187, 0.75);
+                        border-left: 1px solid rgba(187, 187, 187, 0.75);
+                        border-bottom: 1px solid rgba(187, 187, 187, 0.75);
+                        padding: 4px 25px;
+                        a {
+                            font-size: 13px;
+                            line-height: 28px;
+                            color: #666;
+                            font-weight: bold;
+                            text-decoration: none;
+                        }
+                        &:hover {
+                            background-color: #F0F0F0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

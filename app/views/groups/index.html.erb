@@ -1,0 +1,23 @@
+<h1>Lista de Grupos</h1>
+
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @groups.each do |group| %>
+  <tr>
+    <td><%= group.name %></td>
+    <td><%= link_to 'Ver', group %></td>
+    <td><%= link_to 'Editar', edit_group_path(group) %></td>
+    <td><%= link_to 'Eliminar', group, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Grupo', new_group_path, :class => 'btn btn-primary' %>

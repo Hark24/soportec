@@ -1,0 +1,21 @@
+<header>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/"><%= image_tag "soportec.png", size: "180x50" %></a>
+                <div class="nav-collapse pull-right">
+                    <ul class="nav">
+                        <li class="active"><%= link_to "Ingreso", root_path %></li>
+                        <li><%= link_to "Acerca de", about_path %></li>
+                        <li><%= link_to "Contacto", contact_path %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

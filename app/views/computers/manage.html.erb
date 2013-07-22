@@ -1,0 +1,41 @@
+<h1>Mantenimiento de Computadoras</h1>
+
+<table class="table">
+  <tr>
+    <th>Ram</th>
+    <th>Procesador</th>
+    <th>Placa Madre</th>
+    <th>Monitor</th>
+    <th>Mouse</th>
+    <th>Teclado</th>
+    <th>Tarjeta de video</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @computers.each do |computer| %>
+  <tr>
+    <td><%= computer.ram %></td>
+    <td><%= computer.processor %></td>
+    <td><%= computer.motherboard %></td>
+    <td><%= computer.display %></td>
+    <td><%= computer.mouse %></td>
+    <td><%= computer.keyboard %></td>
+    <td><%= computer.videocard %></td>
+    <td><%= link_to 'Ver', computer %></td>
+    <% if can? :update, computer %>
+        <td><%= link_to 'Editar', edit_computer_path(computer) %></td>
+    <% end %>
+    <% if can? :destroy, computer %>
+      <td><%= link_to 'Eliminar', computer, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+    <% end %>  
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if can? :create, @computer %>
+  <%= link_to 'Nueva Computadora', new_computer_path, :class => 'btn btn-primary' %>
+<% end %>

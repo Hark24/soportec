@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @software.name %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @software.version %>
+</p>
+
+<p>
+  <b>Categoria:</b>
+  <%= @software.description %>
+</p>
+
+<% if can? :update, @software %>
+       <%= link_to 'Editar', edit_software_path(@software) %> |
+<% end %>
+
+<%= link_to 'Atras', softwares_path %>
+

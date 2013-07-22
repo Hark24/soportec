@@ -1,0 +1,44 @@
+<div class="alert alert-info">
+    <%= notice %>
+</div>
+
+<p>
+  <b>RAM:</b>
+  <%= @computer.ram %>
+</p>
+
+<p>
+  <b>Procesador:</b>
+  <%= @computer.processor %>
+</p>
+
+<p>
+  <b>Placa madre:</b>
+  <%= @computer.motherboard %>
+</p>
+
+<p>
+  <b>Monitor:</b>
+  <%= @computer.display %>
+</p>
+
+<p>
+  <b>Mouse:</b>
+  <%= @computer.mouse %>
+</p>
+
+<p>
+  <b>Teclado:</b>
+  <%= @computer.keyboard %>
+</p>
+
+<p>
+  <b>Tarjeta de video:</b>
+  <%= @computer.videocard %>
+</p>
+
+<% if can? :update, @computer %>
+  <%= link_to 'Editar', edit_computer_path(@computer) %> |
+<% end %>
+
+<%= link_to 'Atras', computers_path %>

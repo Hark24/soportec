@@ -1,0 +1,22 @@
+<h1>Laboratorios</h1>
+<h2>Listado</h2>
+<div class="centered">
+  <%= paginate @laboratories %>
+</div>
+<div class="span6 centered">
+  <% @laboratories.each do |laboratory| %>
+    <%= render partial: "info", locals: {laboratory: laboratory} %>
+  <% end %>
+
+  <% if can? :create, @laboratory %>
+    <%= link_to 'Nuevo Laboratorio', new_laboratory_path, :class => 'btn btn-primary' %>
+  <% end %>
+  <hr>
+</div>
+
+<h2>Busqueda de Laboratorios <%= @codigo %></h2>
+<%= form_tag :action => 'search' do%>
+    <span>Codigo:</span>
+    <%= collection_select :labo, :number, Laboratory.all, :number, :number %>
+    <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %>
+<% end %>

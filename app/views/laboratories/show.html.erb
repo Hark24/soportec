@@ -1,0 +1,59 @@
+<% if notice.present? %>
+    <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <%= notice %>
+    </div>
+<% end %>
+
+<h1>Detalles del Laboratorio <%= @laboratory.number %></h1>
+<div class="span4 centered">
+  <table class="table">
+    <tbody>
+      <tr>
+        <% user = @laboratory.user == nil ? "No asignado" : @laboratory.user[:name] %>
+        <th>Responsable</th><td><%= user %></td>
+      </tr>
+      <tr>
+        <th>Capacidad</th>
+        <td><%= @laboratory.capacity %></td>
+      </tr>
+      <tr>
+        <th>Piso</th>
+        <td><%= @laboratory.floor %></td>
+      </tr>
+      <tr>
+        <th>Numero de Computadoras</th>
+        <td><%= @laboratory.numComputers %></td>
+      </tr>
+      <tr>
+        <th>Aire Acondicionado</th>
+        <td><%= @laboratory.airConditioning == 1 ?  "Si" : "No" %></td>
+      </tr>
+      <tr>
+        <th>Proyector</th>
+        <td><%= @laboratory.projector == 1 ?  "Si" : "No" %></td>
+      </tr>
+      <tr>
+        <th>Sound</th>
+        <td><%= @laboratory.sound == 1 ?  "Si" : "No" %></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+<div class="button-container">
+    <% if can? :update, @laboratory %>
+      <div class="button">
+        <%= link_to 'Editar', edit_laboratory_path(@laboratory), :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+    <div class="button">
+      <%= link_to 'Atrás', laboratories_path, :class => "btn" %>
+    </div>
+  </div>
+</div>
+
+<p>Lo de arriba lo ordenamos luego</p>
+  <div class="span7 well">
+  <img src="http://placehold.it/660X400" alt="">
+</div>

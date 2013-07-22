@@ -1,0 +1,12 @@
+<div class="alert alert-info">
+    <%= notice %>
+</div>
+
+<p>
+  <b>Nombre:</b>
+  <%= @group.name %>
+</p>
+
+
+<%= link_to 'Editar', edit_group_path(@group) %> |
+<%= link_to 'Atras', groups_path %>

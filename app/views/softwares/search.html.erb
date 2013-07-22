@@ -1,0 +1,41 @@
+<h1>Busqueda de Softwares</h1>
+
+<%= form_tag :action => 'search', :method=>"GET" do%>
+
+    <%= label_tag(:name, "Nombre:") %>
+    <%= text_field_tag(:name) %>
+    <br />
+
+    <%= label_tag(:category_id, "Categoria:") %>
+    <%= collection_select :category_id, :categoria, @categories, :id, :description, :prompt => "Seleccione una categoria" %>
+
+    <br />
+
+    <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %> |
+    <%= link_to 'Atras', {controller: "softwares" ,action: "manage"}, :class => 'btn-small btn-primary' %>
+<%end%>
+
+<br />
+<br /> 
+
+<% if @softwares.present? %>
+    RESULTADOS:
+    <table class="table">
+      <tr>
+        <th>Nombre</th>
+        <th>Version</th>
+        <th>Categoria</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @softwares.each do |software| %>
+      <tr>
+        <td><%= software.name %></td>
+        <td><%= software.version %></td>
+        <td><%= software.description %></td>
+      </tr>
+    <% end %>
+    </table>
+<% end %>
+

@@ -1,0 +1,43 @@
+
+<h1>Horario laboratorio <%= @pred %></h1>
+<%= form_tag :action => 'search' do%>
+    <span>Codigo:</span>
+    <%= collection_select :labo, :number, Laboratory.all, :number, :number, :selected => @pred %>
+    <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %>
+<% end %>
+<% if @laboratory1.size != 0 %>
+
+  <% content_for :head do %>
+<%= javascript_tag "var laboratories = #{@lab};"%>
+<%= javascript_include_tag 'search' %>
+
+<% end %>
+<div id='calendar'></div>
+<div id="event_edit_container">
+	<form>
+		<input type="hidden" />
+		<ul>
+			<li>
+				<span>Date: </span><span class="date_holder"></span> 
+			</li>
+			<li>
+				<label for="start">Start Time: </label><span class="start1"></span>
+			</li>
+			<li>
+				<label for="end">End Time: </label><span class="end1"></span>
+			</li>
+			<li>
+				<label for="title">Curso: </label><span class="title1"></span>
+			</li>
+			<li>
+				<label for="body">Docente: </label><span class="body1"></span>
+			</li>
+		</ul>
+	</form>
+</div>
+<% else %>
+	
+	<h2> No hay horarios asignados</h2>
+	
+<% end %>
+

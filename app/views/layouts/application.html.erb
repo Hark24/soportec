@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+  <title>Soportec</title>
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+</head>
+    <body>
+        <% if user_signed_in? %>
+            <%= render 'elements/header_logged' %>
+        <% else %>
+            <%= render 'elements/header' %>
+        <% end %>
+                
+        <div class="container">
+            <div class="row" id="container">
+                <% if user_signed_in? %>
+                    <div class="span3">
+                        <%= render 'elements/sidebar' %>
+                    </div>
+                    <div class="span8 panel">
+                        <%= yield %>
+                    </div>
+                <% else %>
+                    <%= yield %>
+                <% end %>
+            </div>
+        </div>
+        <%= render 'elements/footer' %>
+    </body>
+</html>

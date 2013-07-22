@@ -1,0 +1,18 @@
+<div class="alert alert-info">
+    <%= notice %>
+</div>
+
+<p>
+  <b>Inicio:</b>
+  <%= @schedule.start %>
+</p>
+
+<p>
+  <b>Fin:</b>
+  <%= @schedule.end %>
+</p>
+
+<% if can? :update, @schedule %>
+	<%= link_to 'Editar', edit_schedule_path(@schedule) %> |
+<% end %>
+<%= link_to 'Atras', schedules_path %>

@@ -1,0 +1,28 @@
+<div class="alert alert-info">
+    <%= notice %>
+</div>
+
+<p>
+  <b>Codigo:</b>
+  <%= @course.code %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>EAP:</b>
+  <%= @course.eaps %>
+</p>
+
+<p>
+  <b>Grupo:</b>
+  <%= @course.groups %>
+</p>
+
+<% if can? :update, @course %>
+	<%= link_to 'Editar', edit_course_path(@course) %> |
+<% end %>
+<%= link_to 'Atras', courses_path %>

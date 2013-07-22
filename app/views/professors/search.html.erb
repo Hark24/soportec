@@ -1,0 +1,46 @@
+<h1>Busqueda de Profesores</h1>
+
+<%= form_tag :action => 'search', :method=>"GET" do%>
+
+    <%= label_tag(:name, "Nombre:") %>
+    <%= text_field_tag(:name) %>
+    <br />
+    
+    <%= label_tag(:lastname, "Apellido:") %>
+    <%= text_field_tag(:lastname) %>
+    <br />
+
+    <%= label_tag(:curso, "Curso:") %>
+    <%= collection_select :curso,:curso_name, @courses, :name, :name , :prompt => "Seleccione un curso" %>
+    <br />
+
+    <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %> |
+    <%= link_to 'Atras', {controller: "professors" ,action: "manage"}, :class => 'btn-small btn-primary' %>
+<%end%>
+
+    <br />
+    <br />
+
+<% if @professors.present? %>
+    RESULTADOS:
+    <table class="table">
+      <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Curso</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @professors.each do |professor| %>
+      <tr>
+        <td><%= professor.code %></td>
+        <td><%= professor.name %></td>
+        <td><%= professor.lastname %></td>
+        <td><%= professor.curso %></td>
+      </tr>
+    <% end %> 
+    </table>
+<% end %>
+

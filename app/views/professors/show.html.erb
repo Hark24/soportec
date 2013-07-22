@@ -1,0 +1,40 @@
+<div class="span6 centered">
+  <% if notice.present? %>
+    <div class="alert alert-info">
+        <%= notice %>
+    </div>
+  <% end %>
+  <h2>Información del Profesor:</h2>
+
+  <div class="span4 well centered">
+    <h4><%= "#{@professor.lastname}, #{@professor.name}" %></h4>
+    <table class="table table-condensed centered">
+      <tr>
+        <th>Código</th><td><%= @professor.code %></td>
+      </tr>
+      <tr>
+        <th>Fecha de Registro</th><td><%= @professor.created_at.to_formatted_s(:short)  %></td>
+      </tr>
+    </table>
+  </div>
+  
+  <br>
+  <div class="button-container">
+    <% if can? :update, @professor %>
+      <div class="button">
+        <%= link_to 'Editar', edit_professor_path(@professor), :class => "btn btn-primary" %>
+      </div>
+    <% end %>
+    <div class="button">
+      <%= link_to 'Atrás', manage_professors_path, :class => "btn"  %>
+    </div>
+  </div>
+
+  
+  <% if @professor.course.present? %>
+  <h2>Cursos:</h2>
+  <ul>
+    <li><%= @professor.course[:name] %></li>
+  </ul>
+  <% end %>
+</div>
