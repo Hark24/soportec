@@ -9,6 +9,7 @@ gem 'rails', '3.2.13'
 
 gem 'activerecord-jdbcsqlite3-adapter'
 gem 'activerecord-jdbcmysql-adapter'
+gem 'activerecord-jdbcpostgresql-adapter'
 gem 'devise'
 gem 'cancan'
 gem 'kaminari'
@@ -50,8 +51,4 @@ platforms :jruby do
   group :assets do
     gem 'therubyrhino' , '~> 2.0.2'
   end
-end
-
-group :production do
-  gem "jdbc-postgres", "~> 9.2.1002.1"
 end
