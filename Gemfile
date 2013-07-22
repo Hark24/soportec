@@ -51,3 +51,7 @@ platforms :jruby do
     gem 'therubyrhino' , '~> 2.0.2'
   end
 end
+
+group :production do
+  gem "jdbc-postgres", "~> 9.2.1002.1"
+end
