@@ -22,7 +22,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyrhino'
+  gem 'therubyrhino' , '~> 2.0.2'
   gem 'bootstrap-sass', '~> 2.3.2.0'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -48,6 +48,6 @@ gem 'jquery-ui-rails', '~> 4.0.3'
 # the javascript engine for execjs gem
 platforms :jruby do
   group :assets do
-    gem 'therubyrhino'
+    gem 'therubyrhino' , '~> 2.0.2'
   end
 end

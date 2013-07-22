@@ -14,7 +14,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  development
+  adapter: sqlite3
+  database: db/test.sqlite3
 
 production:
-  development
+  adapter: sqlite3
+  database: db/production.sqlite3
