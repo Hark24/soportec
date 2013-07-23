@@ -7,9 +7,9 @@
 development:
   adapter: jdbcmysql
   encoding: utf8
-  database: sql314501
-  username: sql314501
-  password: uD6%gR9%
+  database: "sql314501"
+  username: "sql314501"
+  password: "uD6%gR9%"
   host: sql3.freemysqlhosting.net
   port: 3306
 
@@ -24,8 +24,8 @@ test:
 production:
   adapter: jdbcmysql
   encoding: utf8
-  database: sql314501
-  username: sql314501
-  password: uD6%gR9%
+  database: "sql314501"
+  username: "sql314501"
+  password: "uD6%gR9%"
   host: sql3.freemysqlhosting.net
   port: 3306
