@@ -13,6 +13,7 @@ gem 'activerecord-jdbcpostgresql-adapter'
 gem 'devise'
 gem 'cancan'
 gem 'kaminari'
+gem 'puma'
 
 gem 'jruby-openssl'
 
