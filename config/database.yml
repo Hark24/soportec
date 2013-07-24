@@ -5,13 +5,13 @@
 # gem 'activerecord-jdbcsqlite3-adapter'
 #
 development:
-  adapter: jdbcmysql
-  encoding: utf8
-  database: "sql314501"
-  username: "sql314501"
-  password: "uD6%gR9%"
-  host: sql3.freemysqlhosting.net
-  port: 3306
+  adapter: jdbcpostgresql
+  encoding: unicode
+  database: soportec
+  username: postgres
+  password: root
+  host: localhost
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
