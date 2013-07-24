@@ -1,10 +1,20 @@
 
 <h1>Horario laboratorio <%= @pred %></h1>
-<%= form_tag :action => 'search' do%>
-    <span>Codigo:</span>
-    <%= collection_select :labo, :number, Laboratory.all, :number, :number, :selected => @pred %>
-    <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %>
-<% end %>
+
+<div class="row">
+	<div class="span5 centered">
+	  <%= form_tag({ :action => 'search' }, { :class => 'form-horizontal' }) do %>
+	    <div class="control-group">
+	      <%= label_tag :labo, "Elija un laboratorio:", :class => "control-label" %>
+	      <div class="controls">
+	        <%= collection_select :labo, :number, @total_labs, :number, :name %>
+	        <%= submit_tag 'Buscar', :class => 'btn-small btn-primary' %>
+	      </div>
+	    </div>
+	  <% end %>
+	</div>
+</div>
+
 <% if @laboratory1.size != 0 %>
 
   <% content_for :head do %>
@@ -16,15 +26,12 @@
 <div id="event_edit_container">
 	<form>
 		<input type="hidden" />
-		<ul>
+		<ul class="schedule-info">
 			<li>
-				<span>Date: </span><span class="date_holder"></span> 
+				<label for="start">Hora de inicio:</label><span class="start1"></span>
 			</li>
 			<li>
-				<label for="start">Start Time: </label><span class="start1"></span>
-			</li>
-			<li>
-				<label for="end">End Time: </label><span class="end1"></span>
+				<label for="end">Hora de fin: </label><span class="end1"></span>
 			</li>
 			<li>
 				<label for="title">Curso: </label><span class="title1"></span>
@@ -37,7 +44,7 @@
 </div>
 <% else %>
 	
-	<h2> No hay horarios asignados</h2>
+	<h2>No hay horarios asignados.</h2>
 	
 <% end %>
 

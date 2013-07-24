@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   #load_and_authorize_resource :role
   skip_load_and_authorize_resource :role
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
   
   # GET /users
   # GET /users.xml
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
-    # authorize! :create, @user
+    authorize! :create, @user
     @roles = Role.all
     @current_method = "new"
 
