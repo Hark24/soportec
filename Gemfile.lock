@@ -68,6 +68,8 @@ GEM
     multi_json (1.7.7)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    puma (2.4.0-java)
+      rack (>= 1.1, < 2.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -118,4 +120,5 @@ DEPENDENCIES
   devise
   jruby-openssl
   kaminari
+  puma
   rails (= 3.2.13)
